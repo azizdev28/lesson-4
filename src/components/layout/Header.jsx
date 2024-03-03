@@ -22,6 +22,9 @@ export class Header extends Component {
             <li>
               <NavLink to="portfolios">Portfolio</NavLink>
             </li>
+            <li>
+              <NavLink to="posts">Posts</NavLink>
+            </li>
           </ul>
         </nav>
       </div>
