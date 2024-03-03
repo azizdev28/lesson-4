@@ -3,6 +3,8 @@ import "./App.css";
 import Layout from "./components/layout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loading from "./components/Loading";
+import { ToastContainer } from "react-toastify";
+import ContactInfo from "./pages/ContactInfo";
 // import PortfolioPage from "./pages/PortfolioPage";
 // import PortfoliosPage from "./pages/PortfoliosPage";
 
@@ -22,12 +24,15 @@ const PostPage = lazy(() => import("./pages/PostPage"));
 function App() {
   return (
     <Suspense fallback={<Loading />}>
+      <ToastContainer />
+
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/">
               <Route index element={<HomePage />} />
               <Route path="contact" element={<ContactPage />} />
+              <Route path="contact/:usersId" element={<ContactInfo />} />
               <Route path="about/">
                 <Route index element={<AboutPage />} />
                 <Route path="partners" element={<AboutPartners />} />
